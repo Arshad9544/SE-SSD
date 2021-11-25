@@ -38,7 +38,7 @@ std::vector<at::Tensor> three_nn(at::Tensor unknowns, at::Tensor knows) {
                             unknowns.data<float>(), knows.data<float>(),
                             dist2.data<float>(), idx.data<int>());
   } else {
-    AT_CHECK(false, "CPU not supported");
+    TORCH_CHECK(false, "CPU not supported");
   }
 
   return {dist2, idx};
